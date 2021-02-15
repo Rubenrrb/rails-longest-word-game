@@ -1,0 +1,14 @@
+<h2>Now your results!</h2>
+
+<% if @included %>
+  <% if @english_word %>
+    <p><strong>Congratulations!</strong> <%= @answer %> is a valid English word!</p>
+  <% else %>
+    <p>Sorry but <strong><%= @abswer %></strong> does not seem to be a valid English word...</p>
+  <% end %>
+<% else %>
+  <p>Sorry but <strong><%= @answer %></strong> can't be built out of <%= @letters.join(", ") %></p>
+<% end %>
+
+
+<%= link_to  "Play again", 'new' %>
